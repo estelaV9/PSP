@@ -16,7 +16,7 @@ public class Main {
         // (por eso al ejecutarlo el mensaje del run() se ejecutara en medio del bucle / al principio...
         // dependiendo el ordenador
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName() + " : " + i);
         }
 

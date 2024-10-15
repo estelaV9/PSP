@@ -1,6 +1,7 @@
 package org.example;
 
 public class MiProceso extends Thread {
+    Contador contadorProceso;
     @Override
     public void run() {
         super.run(); // WSE EJECUTA AUTOMATICAMENTE
@@ -11,7 +12,8 @@ public class MiProceso extends Thread {
 
     // THREAD TIENE DISTINTOS CONSTRUCTORES
     // Thread(String name) METE UN NOMBRE AL PROCESO
-    public MiProceso (String name){
+    public MiProceso (String name, Contador contadorComun){
         super(name); // LLAMAMOS AL OBJETO PADRE
+        contadorProceso = contadorComun;
     }
 }

@@ -7,4 +7,6 @@ module com.example.cronometrofx {
 
     opens com.example.cronometrofx to javafx.fxml;
     exports com.example.cronometrofx;
+    exports com.example.cronometrofx.Controller;
+    opens com.example.cronometrofx.Controller to javafx.fxml;
 }

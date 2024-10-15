@@ -2,11 +2,20 @@ package org.example;
 
 public class MiProceso extends Thread {
     Contador contadorProceso;
+
     @Override
     public void run() {
         super.run(); // WSE EJECUTA AUTOMATICAMENTE
         // SE PUEDE PONER EL NOMBRE DEL HILO
         System.out.println(Thread.currentThread().getName() + " Soy el proceso creado");
+
+        for(;contadorProceso.getNumero() <1000;){
+            System.out.println("Proceso: " + Thread.currentThread().getName() + " - Contador: " + contadorProceso.getNumero());
+            // EL PROCESO 2 PIERDE LA CP
+            int tmp = contadorProceso.getNumero();
+            tmp++;
+            contadorProceso.setNumero(tmp);
+        }
     } // CUANDO CREEMOS UN PROCESO VA A IR A EL METODO RUN
 
 

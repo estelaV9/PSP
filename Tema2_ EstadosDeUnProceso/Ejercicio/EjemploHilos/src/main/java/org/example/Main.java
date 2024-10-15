@@ -3,9 +3,10 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hola");
+        Contador contador = new Contador(10);
 
         // CREAMOS UN PROCESO
-        MiProceso p1 = new MiProceso("p1");
+        MiProceso p1 = new MiProceso("p1", contador);
 
         // NO HACER p1.run PORQUE NO SE EJECUTARIA EL PROCESO EN REALIDAD NO SE EJECUTARIA CONCURRENTEMENTE
         // HAY QUE LLAMAR AL METODO START() PARA LLAMAR AL PROCESO
@@ -21,13 +22,13 @@ public class Main {
         }
 
         // CREAMOS MAS PROCESOS
-        MiProceso p2 = new MiProceso("p2");
+        MiProceso p2 = new MiProceso("p2", contador);
         p2.start();
-        MiProceso p3 = new MiProceso("p3");
+        MiProceso p3 = new MiProceso("p3", contador);
         p3.start();
-        MiProceso p4 = new MiProceso("p4");
+        MiProceso p4 = new MiProceso("p4", contador);
         p4.start();
-        MiProceso p5 = new MiProceso("p5");
+        MiProceso p5 = new MiProceso("p5", contador);
         p5.start();
     }
 }

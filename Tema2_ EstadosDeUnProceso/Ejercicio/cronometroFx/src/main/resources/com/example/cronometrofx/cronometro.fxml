@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.cronometrofx.CronometroCtrller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="204.0" prefWidth="240.0" style="-fx-background-color: #375f84;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cronometrofx.CronometroCtrller">
+   <children>
+      <Text layoutX="31.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRONOMETRO" underline="true">
+         <font>
+            <Font name="Gill Sans Nova Cond Ultra Bold" size="31.0" />
+         </font>
+      </Text>
+      <Button fx:id="pararBtt" layoutX="21.0" layoutY="148.0" mnemonicParsing="false" onAction="#onPararAction" style="-fx-background-color: #52366b; -fx-text-fill: black; -fx-border-color: black;" text="PARAR">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="iniciarBtt" layoutX="129.0" layoutY="148.0" mnemonicParsing="false" onAction="#onIniciarAction" style="-fx-background-color: #52366b; -fx-text-fill: black; -fx-border-color: black;" text="INICIAR">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="cronometroLabel" layoutX="53.0" layoutY="71.0" style="-fx-text-fill: black;" text="00 : 00 : 00">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

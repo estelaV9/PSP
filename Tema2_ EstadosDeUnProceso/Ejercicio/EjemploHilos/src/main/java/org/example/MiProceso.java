@@ -9,7 +9,7 @@ public class MiProceso extends Thread {
         // SE PUEDE PONER EL NOMBRE DEL HILO
         System.out.println(Thread.currentThread().getName() + " Soy el proceso creado");
 
-        for(;contadorProceso.getNumero() < 1000;){
+        for (; contadorProceso.getNumero() < 1000; ) {
             System.out.println("Proceso: " + Thread.currentThread().getName() + " - Contador: " + contadorProceso.getNumero());
             // EL PROCESO 2 PIERDE LA CPU
             /** se supone que se pierde --> PROBLEMA DE CONCURRENCIA**/
@@ -22,7 +22,7 @@ public class MiProceso extends Thread {
 
     // THREAD TIENE DISTINTOS CONSTRUCTORES
     // Thread(String name) METE UN NOMBRE AL PROCESO
-    public MiProceso (String name, Contador contadorComun){
+    public MiProceso(String name, Contador contadorComun) {
         super(name); // LLAMAMOS AL OBJETO PADRE
         contadorProceso = contadorComun;
     }

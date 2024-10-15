@@ -9,6 +9,11 @@ Realizar un <a href="https://github.com/estelaV9/PSP/blob/master/Tema1_Concurren
 ## Tema 2: Estados de un Proceso
 ### <a href="https://github.com/estelaV9/PSP/blob/master/Tema2_%20EstadosDeUnProceso/ResumenTema2.md">Explicación</a> del tema 2.
 ### · Ejercicios del tema
+- <a href="https://github.com/estelaV9/PSP/tree/master/Tema2_%20EstadosDeUnProceso/Ejercicio/EjemploHilos">Ejercicio Incial</a> siguiendo los pasos de este <a href="https://www.youtube.com/watch?v=JTXWVZctk3I&list=PLYwQpNMBCzIm_o2e89tJXXQ0btAFKh0BE&index=2&t=1749s">vídeo</a>
+- <a href="https://github.com/estelaV9/PSP/blob/master/Tema2_%20EstadosDeUnProceso/Ejercicio/ResumenEjercicioHilos.md">Resumen</a> de los ejercicios de hilos.
+
+
+
 
 ---
 >_IES Ribera de Castilla 24/25._

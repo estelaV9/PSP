@@ -18,6 +18,7 @@ public class CronometroCtrller {
     public static boolean isIniciadoHilo = true; // VARIBALE PARA SABER SI SE HA INIDICADO EL HILO
     boolean ejecutando = false; // CONTROLA LA LOGICA DE CUANDO VA A INICIAR Y CUANDO VA A PARAR
 
+    private Cronometro cronometro;
     @FXML
     void onIniciarAction(ActionEvent event) {
         if(!ejecutando){
@@ -31,11 +32,14 @@ public class CronometroCtrller {
     void onPararAction(ActionEvent event) {
         ejecutando = false;
         isIniciadoHilo = false;
+        if (cronometro != null) {
+            cronometro.interrupt(); // INTERRUMPE EL HILO SI ESTA EN EJECUCION
+        }
     }
 
     private void iniciarCronometro(){
-        if(isIniciadoHilo){
-            Cronometro cronometro = new Cronometro(cronometroLabel);
+        if (cronometro == null || !cronometro.isAlive()) { // SOLO SE INICIA SI NO HAY UN HILO EJECUTANDOSE
+            cronometro = new Cronometro(cronometroLabel);
             cronometro.start();
         }
     }

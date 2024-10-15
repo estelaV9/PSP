@@ -12,14 +12,16 @@ public class Cronometro extends Thread{
     @Override
     public void run() {
         int x = 0;
-        while(CronometroCtrller.isIniciadoHilo){
+        while(CronometroCtrller.isIniciadoHilo && !Thread.currentThread().isInterrupted()){
             try {
                 Thread.sleep(1000);
                 System.out.println(x);
                 ejecutarHiloCronometro(x);
                 x++;
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                // MaANEJAR LA INTERRUPCION Y SALIDA DEL HILO
+                Thread.currentThread().interrupt();
+                return;
             }
         }
     }
@@ -30,6 +32,10 @@ public class Cronometro extends Thread{
         if(CronometroCtrller.segundo > 59){
             CronometroCtrller.segundo = 0;
             CronometroCtrller.minuto++;
+        }
+        if(CronometroCtrller.minuto > 59){
+            CronometroCtrller.minuto = 0;
+            CronometroCtrller.hora++;
         }
         String segTxt = "", minTxt = "", horaTxt = "";
         segTxt += CronometroCtrller.segundo;

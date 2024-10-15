@@ -3,8 +3,7 @@ package org.example;
 public class Contador {
     private int numero;
 
-    public Contador(int numero) {
-        this.numero = numero;
+    public Contador() {
     }
 
     public int getNumero() {

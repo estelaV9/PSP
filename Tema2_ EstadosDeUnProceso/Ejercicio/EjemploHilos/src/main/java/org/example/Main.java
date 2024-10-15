@@ -3,7 +3,7 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hola");
-        Contador contador = new Contador(10);
+        Contador contador = new Contador();
 
         // CREAMOS UN PROCESO
         MiProceso p1 = new MiProceso("p1", contador);
@@ -17,7 +17,7 @@ public class Main {
         // (por eso al ejecutarlo el mensaje del run() se ejecutara en medio del bucle / al principio...
         // dependiendo el ordenador
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.println(Thread.currentThread().getName() + " : " + i);
         }
 

@@ -1,6 +1,7 @@
 package com.example.cronometrofx.Model;
 
 import com.example.cronometrofx.Controller.CronometroCtrller;
+import javafx.application.Platform;
 import javafx.scene.control.Label;
 
 public class Cronometro extends Thread{
@@ -37,11 +38,32 @@ public class Cronometro extends Thread{
             CronometroCtrller.minuto = 0;
             CronometroCtrller.hora++;
         }
-        String segTxt = "", minTxt = "", horaTxt = "";
+        String segTxt = "", minTxt = "", horaTxt = "00";
         segTxt += CronometroCtrller.segundo;
         minTxt += CronometroCtrller.minuto;
 
-        String reloj = horaTxt + " : " + minTxt + " : " + segTxt;
-        eti.setText(reloj);
+        String reloj;
+        if(CronometroCtrller.segundo < 10){
+            if(CronometroCtrller.minuto < 10) {
+                reloj = horaTxt + " : 0" + minTxt + " : 0" + segTxt;
+            } else {
+                reloj = horaTxt + " : " + minTxt + " : 0" + segTxt;
+            }
+        } else {
+            if(CronometroCtrller.minuto < 10) {
+                reloj = horaTxt + " : 0" + minTxt + " : " + segTxt;
+            } else {
+                reloj = horaTxt + " : " + minTxt + " : " + segTxt;
+            }
+        }
+
+
+        Platform.runLater(() -> {
+            eti.setText(reloj); // Actualizamos el texto del Label en el hilo de JavaFX
+        });
+        // eti.setText(reloj); SI SETTEAMOS DIRECTAMENTE OCURRE UN ERROR YA QUE SE ESTA
+        // INTENTANDO ACTUALIZAR UN LABEL DESDE UN HILO DIFERENTE
+        // POR ESO SE USA 'Platform.runLater()': ESTE METODO GARANTIZA QUE EL CODIGO DENTRO
+        // DEL BLOQUE SE EJECUTE EN EL HILO DE LA INTERFAZ.
     }
 }

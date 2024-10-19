@@ -20,21 +20,56 @@ Las transiciones entre estados en este modelo incluyen:
 - **Bloqueado → Preparado**: El evento por el cual el proceso estaba esperando ocurre.
 - **Preparado → Terminado**: Un padre puede terminar con un proceso hijo en cualquier momento o si el padre termina, todos sus hijos se pueden terminar.
 - **Bloqueado → Terminado**: el mismo criterio que el anterior.
+<img src="Images/modeloProcesoCincoEstados.jpg" width="400px">
+
 
 ## Modelo de Proceso de Siete Estados
-Además de los cinco estados anteriores, este modelo agrega:
-- **Nuevo a Bloqueado**: Un proceso puede estar bloqueado desde el principio si requiere la espera de recursos.
-- **Bloqueado a Ejecución**: Un proceso puede pasar directamente a la ejecución cuando un recurso se libera.
+<table>
+  <tr>
+    <td width="60%">
+       Además de los cinco estados anteriores, este modelo agrega:
+      <ul>
+         <li><b>Nuevo a Bloqueado</b>: Un proceso puede estar bloqueado desde el principio si requiere la espera de recursos.</li>
+         <li><b>Bloqueado a Ejecución</b>: Un proceso puede pasar directamente a la ejecución cuando un recurso se libera.</li>
+      </ul>
+    </td>
+    <td width="40%">
+      <img src="Images/modeloProcesoSieteEstados.png" width="400px">
+    </td>
+  </tr>
+</table>
 
 ## Colas de Espera
-Existen dos colas principales:
-1. **Cola de Listos**: Contiene los procesos nuevos que están listos para ejecutarse.
-2. **Cola de Bloqueados**: Contiene los procesos que están esperando que ocurra un evento.
+<table>
+  <tr>
+    <td width="70%">
+       Existen dos colas principales:
+      <ol>
+         <li><b>Cola de Listos</b>: Contiene los procesos nuevos que están listos para ejecutarse.</li>
+         <li><b>Cola de Bloqueados</b>: Contiene los procesos que están esperando que ocurra un evento.</li>
+      </ol>
+    </td>
+    <td width="30%">
+      <img src="Images/colasEspera.png" width="400px">
+    </td>
+  </tr>
+</table>
 
 El uso de una única cola de bloqueados es ineficiente en sistemas grandes, ya que al ocurrir un evento, el sistema debe recorrer toda la cola para encontrar los procesos correspondientes. Una solución más eficiente es tener varias colas, cada una asociada a un evento específico, lo que permite mover directamente los procesos a la cola de listos cuando dicho evento ocurre.
 
+
 ## Niveles de Planificación
-La planificación hace referencia a un conjunto de políticas y mecanismos incorporados al SO que determinan en qué orden se va a ejecutar las tareas pendientes. Existen tres tipos:
+<table>
+  <tr>
+    <td width="60%">
+      La planificación hace referencia a un conjunto de políticas y mecanismos incorporados al SO que determinan en qué orden se va a ejecutar las tareas pendientes. Existen tres tipos:
+    </td>
+    <td width="40%">
+       <img src="Images/nivelesPlanificacion.png" width="400px">
+    </td>
+  </tr>
+</table>
+
 
 ### 1. **Planificador de Largo Plazo (PLP)**:
 El planificador de largo plazo asigna procesos a la cola de preparados, equilibrando las cargas de trabajo entre procesos que demandan mucho uso de CPU o de E/S. Si la utilización de la CPU es baja, admite más trabajos para aumentar la cantidad de procesos listos, mejorando la eficiencia. En cambio, cuando la CPU está muy ocupada, el planificador reduce la admisión de nuevos trabajos para evitar sobrecargar el sistema y aumentar los tiempos de respuesta.
@@ -56,7 +91,20 @@ En los sistemas de multiprogramación y tiempo compartido, varios procesos resid
 Para evitarlo, se utiliza **swapping**, intercambiando procesos entre la memoria principal y secundaria. El planificador a medio plazo gestiona estas transiciones, maximizando el uso de recursos al mover procesos bloqueados a memoria secundaria o trayendo de vuelta aquellos que solo estaban bloqueados por falta de memoria.
 
 ## Cambio de Contexto
-Consiste en desalojar a un proceso de la CPU y reanudar otro. Se conoce como **contexto** a:
+<table>
+  <tr>
+    <td width="60%">
+      Consiste en desalojar a un proceso de la CPU y reanudar otro.
+    </td>
+    <td width="40%">
+      <img src="Images/cambioContexto.png" width="300px">
+    </td>
+  </tr>
+</table>
+
+
+
+Se conoce como **contexto** a:
 - **Estado del proceso**: Se guarda el estado del proceso saliente en su PCB (Process Control Block) y recuperan los registros del proceso que entra.
 - **Estado del procesador**: Se almacenan los valores de los diferentes registros del procesador.
 - **Información de gestión de memoria**: Espacio de memoria reservada para el proceso.
@@ -65,7 +113,18 @@ El cambio de contexto (**tiempo de conmutación** es tiempo perdido, ya que el p
 Únicamente es tiempo necesario para permitir la multiprogramación y su duración depende de la arquitectura en concreto del procesador.
 
 ## Bloque de Control de Proceso (PCB)
-El **bloque de control de proceso** (PCB) es una estructura de datos fundamental en un sistema operativo, que contiene toda la información necesaria para gestionar un proceso. Es consultado y modificado por varios módulos del sistema, como los encargados de la planificación, asignación de recursos, interrupciones y monitoreo del rendimiento. El conjunto de los PCB definin el estado del SO y guarda la **tabla de procesos**, la cual s epuede implemntar como una lista enlazada (es donde reside en la memoria princiapl debido a su alta frecuencia de consulta)
+<table>
+  <tr>
+    <td width="80%">
+      El <b>bloque de control de proceso</b> (PCB) es una estructura de datos fundamental en un sistema operativo, que contiene toda la información necesaria para gestionar un proceso. Es consultado y modificado por varios módulos del sistema, como los encargados de la planificación, asignación de recursos, interrupciones y monitoreo del rendimiento. <br>
+       El conjunto de los PCB definin el estado del SO y guarda la <b>tabla de procesos</b>, la cual s epuede implemntar como una lista enlazada (es donde reside en la memoria princiapl debido a su alta frecuencia de consulta)
+    </td>
+    <td width="20%">
+      <img src="Images/pcb.png" width="200px">
+    </td>
+  </tr>
+</table>
+
 
 Son posiciones de memoria reservadas para contener:
 - **Identificador del proceso (PID)**: Se le asigna a cada proceso un ID numérico único. Además, un proceso puede también tener asignado un ID de usuario que indica a quién pertenece el proceso.
@@ -82,6 +141,8 @@ Un PCB siempre ocupa el mismo espacio en memoria.
 
 
 
+
+---
 ## Hilos 
 Los **hilos** son un mecanismo que permite la ejecución de dos o más procesos a la misma vez (multitarea).
 Se pueden crear **extendiendo** la clase Thread o implementando la **Interface Runnable**.

@@ -5,7 +5,7 @@ public class Cliente {
     private String nombre;
     private int[] carroCompra;
 
-    public Cliente(int[] carroCompra, String nombre) {
+    public Cliente(String nombre, int[] carroCompra) {
         this.carroCompra = carroCompra;
         this.nombre = nombre;
     }

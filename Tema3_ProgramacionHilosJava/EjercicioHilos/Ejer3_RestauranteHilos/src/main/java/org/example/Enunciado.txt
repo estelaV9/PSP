@@ -1,0 +1,25 @@
+Ejercicio: Simulación de un Restaurante (Productor-Consumidor)
+Simular un sistema simple de productor-consumidor donde un hilo representa al chef que
+prepara platos (productor) y otro hilo representa a los clientes que consumen esos platos (consumidor).
+
+Descripción
+En un restaurante, el chef prepara platos que los clientes pueden consumir.
+La cocina tiene un límite en la cantidad de platos que puede contener (por ejemplo, 5 platos).
+Los clientes deben esperar si la cocina está vacía o si ya hay demasiados platos en la cocina.
+
+Componentes:
+    - Cocina: Una clase que actúa como un contenedor para los platos. Utiliza wait() y notify()
+        para manejar la sincronización.
+    - Chef: Un hilo que produce platos. Cada vez que prepara un plato, lo agrega a la cocina.
+    - Clientes: Hilos que consumen platos de la cocina. Cada vez que un cliente consume un plato,
+        debe esperar si no hay platos disponibles.
+
+Implementación
+    - Cocina: Utiliza una lista o una cola para almacenar los platos.
+        Métodos para agregar (producir) y quitar (consumir) platos.
+
+    - Chef: Crea un hilo que continuamente produce platos y los agrega a la cocina,
+        esperando si está llena.
+
+    - Clientes: Crea varios hilos de clientes que intentan consumir platos de la cocina.
+        Deben esperar si no hay platos disponibles.

@@ -16,15 +16,13 @@ public class Cocina {
             // SI ESTA LLENA LA COCINA, EL HILO DEL CHEF ESPERE HASTA QUE HAYA ESPACIO DISPONIBLE
             wait();
         }
-
         // CUANDO HAYA ESPACIO, SE AGREGA EL PLATO A LA COLA
         numPlatos++; // AGREGA PLATO
         System.out.println("El chef ha agregado un plato. Total: " + numPlatos);
         notify(); // NOTIFICA QUE AHORA HAY UN PLATO DISPONIBLE
-
     } // METODO PARA AGREGAR PLATOS A LA COLA
 
-    public void consumirPlato() throws InterruptedException {
+    public synchronized void consumirPlato() throws InterruptedException {
         // SE VERIFICA SI LA COCINA ESTA LLENA
         while(numPlatos < 0){
             // SI ESTA, EL HILO DEL CLIENTE DEBE ESPERAR HASTA QUE EL CHEF PRODUZCA UN NUEVO PLATO
@@ -32,6 +30,7 @@ public class Cocina {
         }
         // CUANDO HAYA ESPACIO, SE RETIRA EL PLATO A LA COLA
         numPlatos--; // RETIRA PLATO
+        System.out.println("El cliente ha comido un plato. Total: " + numPlatos);
         notify(); // NOTIFICA QUE AHORA HAY UN PLATO DISPONIBLE PARA MAS PLATOS
     } // METODO PARA CONSUMIR PLATOS
 

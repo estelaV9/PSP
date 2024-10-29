@@ -11,5 +11,7 @@ public class Main {
         // OBJETO QUE REPRESENTA A LOS CLIENTES QUE CONSUMEN ESOS PLATOS
         Cliente consumidor = new Cliente("Daniele");
 
+
+        productor.start(); // PRODUCE PLATOS
     }
 }

@@ -10,6 +10,23 @@ Los clientes deben esperar si la cocina está vacía o si ya hay demasiados plat
 Componentes:
     - Cocina: Una clase que actúa como un contenedor para los platos. Utiliza wait() y notify()
         para manejar la sincronización.
+
+        Métodos
+            * Agregar Plato:
+            Este método se llama cuando el chef ha preparado un nuevo plato.
+            Antes de agregar el plato a la cola, verifica si la cocina ya está llena. Si lo está,
+            el método hace que el hilo del chef espere (llamando a wait()) hasta que haya espacio
+            disponible.
+            Una vez que hay espacio, agrega el plato a la cola y notifica a cualquier hilo que
+            esté esperando (como un cliente) que ahora hay un plato disponible.
+
+            * Consumir Plato:
+            Este método se llama cuando un cliente intenta consumir un plato.
+            Verifica si la cocina está vacía. Si está vacía, el hilo del cliente debe esperar
+            (usando wait()) hasta que el chef produzca un nuevo plato.
+            Cuando hay un plato disponible, lo retira de la cola y notifica al hilo del chef que
+            ahora hay espacio disponible para más platos.
+
     - Chef: Un hilo que produce platos. Cada vez que prepara un plato, lo agrega a la cocina.
     - Clientes: Hilos que consumen platos de la cocina. Cada vez que un cliente consume un plato,
         debe esperar si no hay platos disponibles.

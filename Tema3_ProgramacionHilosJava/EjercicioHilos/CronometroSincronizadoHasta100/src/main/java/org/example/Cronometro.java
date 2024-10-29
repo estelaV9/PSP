@@ -1,6 +1,6 @@
 package org.example;
 
-public class Cronometro extends java.lang.Thread {
+public class Cronometro extends Thread {
 
     @Override
     public void run() {

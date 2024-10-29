@@ -13,5 +13,5 @@ public class Cronometro extends java.lang.Thread {
             // SI EL HILO ES INTERRUMPIDO, FINALIZA EL HILO
             Cronometro.currentThread().interrupt();
         }
-    }
+    } // CREAR METODO
 }

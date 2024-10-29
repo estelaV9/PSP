@@ -12,7 +12,11 @@ public class Cliente extends Thread{
     @Override
     public void run() {
         try {
-            cocina.consumirPlato();
+            for (int i = 0; i < 5; i++) { // CONSUMIR 5 PLATOS
+                cocina.consumirPlato();
+                System.out.println(nombre + " ha consumido un plato.");
+                Thread.sleep(1000); // TARDA UN SEGUNDO EN CONSUMIR PLATO
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

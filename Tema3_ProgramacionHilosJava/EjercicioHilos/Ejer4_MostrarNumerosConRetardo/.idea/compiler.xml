@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Ejer4_LlegaTempranoOPronto" />
+        <module name="Ejer4_MostrarNumerosConRetardo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Ejer4_LlegaTempranoOPronto" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

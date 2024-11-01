@@ -18,7 +18,7 @@ public class PadreEsperaHijo extends Thread {
 
         PadreEsperaHijo hilo1 = new PadreEsperaHijo();
         hilo1.start();
-        //hilo1.join();
+        hilo1.join();
 
         System.out.println("Fin Principal");
     }

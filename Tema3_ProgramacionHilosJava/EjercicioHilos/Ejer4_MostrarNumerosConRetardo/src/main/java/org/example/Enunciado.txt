@@ -1,0 +1,2 @@
+Ejercicio sacado de: https://victomanolo.wordpress.com/ejercicios-de-thread-en-java/
+2.- Mostrar los números del 1 al 20, con un retardo de tiempo de 1500 mili-segundos

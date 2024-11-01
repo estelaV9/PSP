@@ -1,0 +1,27 @@
+Simulación de Retiro de Dinero en un Banco
+
+Descripción
+Simular una cuenta bancaria en la que varios clientes (hilos) intentan retirar dinero
+simultáneamente. Utilizar synchronized para asegurar que las operaciones de retiro
+se realicen de manera segura.
+
+Objetivos:
+
+- Crear una clase CuentaBancaria que permita retirar dinero de una cuenta.
+
+- Implementar el método retirarDinero(int cantidad) que:
+    · Verifique si hay suficiente saldo.
+    · Si hay suficiente saldo, reste la cantidad solicitada y muestre un mensaje
+        indicando el retiro y el saldo restante.
+    · Si no hay suficiente saldo, muestre un mensaje indicando que no se
+        puede realizar el retiro.
+
+- Crear una clase Cliente que extienda Thread y represente a un cliente que intenta retirar dinero.
+
+- En el método main, crear una instancia de CuentaBancaria con un saldo inicial y varios
+    hilos Cliente que intenten retirar diferentes cantidades de dinero.
+
+- Iniciar los hilos y observar la salida para verificar la correcta sincronización de las operaciones.
+
+Consideraciones
+Utilizar synchronized para sincronizar el método de retiro.

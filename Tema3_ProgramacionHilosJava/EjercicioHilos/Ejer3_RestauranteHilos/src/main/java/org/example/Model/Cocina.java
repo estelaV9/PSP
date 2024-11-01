@@ -12,7 +12,7 @@ public class Cocina {
 
     public synchronized void agregarPlato() throws InterruptedException {
         // SE VERIFICA SI LA COCINA ESTA LLENA
-        while (numPlatos > capacidad) {
+        while (numPlatos >= capacidad) {
             // SI ESTA LLENA LA COCINA, EL HILO DEL CHEF ESPERE HASTA QUE HAYA ESPACIO DISPONIBLE
             wait();
         }
@@ -24,7 +24,7 @@ public class Cocina {
 
     public synchronized void consumirPlato() throws InterruptedException {
         // SE VERIFICA SI LA COCINA ESTA LLENA
-        while(numPlatos < 0){
+        while(numPlatos == 0){
             // SI ESTA, EL HILO DEL CLIENTE DEBE ESPERAR HASTA QUE EL CHEF PRODUZCA UN NUEVO PLATO
             wait();
         }

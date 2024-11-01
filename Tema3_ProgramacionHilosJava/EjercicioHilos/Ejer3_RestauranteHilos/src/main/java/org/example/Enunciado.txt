@@ -40,3 +40,31 @@ Implementación
 
     - Clientes: Crea varios hilos de clientes que intentan consumir platos de la cocina.
         Deben esperar si no hay platos disponibles.
+
+
+
+
+Salida:
+Bienvenido a la simulación de un restaurante!
+El chef ha agregado un plato. Total: 1
+El cliente ha comido un plato. Total: 0
+Eugenie ha preparado un plato.
+Daniele ha consumido un plato.
+El chef ha agregado un plato. Total: 1
+Eugenie ha preparado un plato.
+El cliente ha comido un plato. Total: 0
+Daniele ha consumido un plato.
+El chef ha agregado un plato. Total: 1
+Eugenie ha preparado un plato.
+El cliente ha comido un plato. Total: 0
+Daniele ha consumido un plato.
+El chef ha agregado un plato. Total: 1
+Eugenie ha preparado un plato.
+El cliente ha comido un plato. Total: 0
+Daniele ha consumido un plato.
+El chef ha agregado un plato. Total: 1
+Eugenie ha preparado un plato.
+El cliente ha comido un plato. Total: 0
+Daniele ha consumido un plato.
+
+Process finished with exit code 0

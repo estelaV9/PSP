@@ -13,7 +13,7 @@ public class Chef extends Thread {
     @Override
     public void run() {
         try {
-            for (int i = 5; i > 0; i--) { // PREPARAR 5 PLATOS
+            for (int i = 0; i < 5; i++) { // PREPARAR 5 PLATOS
                 cocina.agregarPlato();
                 System.out.println(nombreChef + " ha preparado un plato.");
                 Thread.sleep(1000); // TARDA UN SEGUNDO EN AGREGAR PLATO

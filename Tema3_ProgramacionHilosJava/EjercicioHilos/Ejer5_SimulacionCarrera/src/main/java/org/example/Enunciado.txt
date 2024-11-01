@@ -1,0 +1,2 @@
+4.- Ingresar los nombres de tres mascotas e simular una
+carrera de 30 metros e indicar , quien llego a la meta.

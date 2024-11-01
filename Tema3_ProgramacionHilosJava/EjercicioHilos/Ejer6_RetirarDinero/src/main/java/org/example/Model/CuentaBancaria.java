@@ -1,21 +1,12 @@
 package org.example.Model;
 
 public class CuentaBancaria {
-    private double cantidadRetirar; // CANTIDAD DE DINERO QUE SE VA A RETIRAR
     private double cantidadCuenta; // CANTIDAD TOTAL QUE TIENE EN LA CUENTA
 
-    public CuentaBancaria(double cantidadRetirar, double cantidadCuenta) {
-        this.cantidadRetirar = cantidadRetirar;
+    public CuentaBancaria(double cantidadCuenta) {
         this.cantidadCuenta = cantidadCuenta;
     }
 
-    public double getCantidadRetirar() {
-        return cantidadRetirar;
-    }
-
-    public void setCantidadRetirar(double cantidadRetirar) {
-        this.cantidadRetirar = cantidadRetirar;
-    }
 
     public double getCantidadCuenta() {
         return cantidadCuenta;

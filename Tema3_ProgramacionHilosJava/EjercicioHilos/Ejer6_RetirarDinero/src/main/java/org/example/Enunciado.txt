@@ -6,7 +6,6 @@ simultáneamente. Utilizar synchronized para asegurar que las operaciones de ret
 se realicen de manera segura.
 
 Objetivos:
-
 - Crear una clase CuentaBancaria que permita retirar dinero de una cuenta.
 
 - Implementar el método retirarDinero(int cantidad) que:

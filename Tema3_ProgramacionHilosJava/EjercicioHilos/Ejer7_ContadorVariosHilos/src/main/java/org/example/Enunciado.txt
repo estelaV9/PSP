@@ -1,0 +1,38 @@
+Contador Compartido
+Objetivo: Crear un contador compartido al que varios hilos intentan
+incrementar su valor de manera simultánea.
+
+
+Descripción
+- Tendremos un Contador que comienza en 0 y se incrementa hasta un valor
+    máximo especificado (por ejemplo, 100).
+- Varios Hilos (pueden ser 5 o más) intentan incrementar el contador en
+    un valor fijo (por ejemplo, 1) en ciclos.
+- Cada hilo debe imprimir el valor del contador después de cada incremento.
+- Utiliza synchronized para evitar que múltiples hilos modifiquen el contador al mismo tiempo,
+    asegurando así que cada incremento se realice de manera atómica.
+
+Requisitos
+- Crea una clase Contador que mantenga el valor del contador y
+    tenga un método sincronizado para incrementarlo.
+- Crea una clase que extienda Thread para representar a los hilos
+    que incrementan el contador.
+- Al finalizar el trabajo de los hilos, debe imprimirse el valor final del contador.
+
+Asegúrate de que el programa maneje adecuadamente la finalización de los hilos y el acceso al contador.
+
+
+Salida:
+Hilo 1 ha incrementado el contador: 1
+Hilo 2 ha incrementado el contador: 2
+Hilo 3 ha incrementado el contador: 3
+Hilo 1 ha incrementado el contador: 4
+Hilo 4 ha incrementado el contador: 5
+Hilo 5 ha incrementado el contador: 6
+Hilo 1 ha incrementado el contador: 7
+Hilo 2 ha incrementado el contador: 8
+Hilo 3 ha incrementado el contador: 9
+Hilo 4 ha incrementado el contador: 10
+...
+Hilo 5 ha incrementado el contador: 100
+Valor final del contador: 100

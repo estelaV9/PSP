@@ -7,17 +7,8 @@ public class CuentaBancaria {
         this.cantidadCuenta = cantidadCuenta;
     }
 
-
-    public double getCantidadCuenta() {
-        return cantidadCuenta;
-    }
-
-    public void setCantidadCuenta(double cantidadCuenta) {
-        this.cantidadCuenta = cantidadCuenta;
-    }
-
-    void retirarDinero(double cantidad){
-        if(cantidadCuenta < cantidad){
+    public synchronized void retirarDinero(double cantidad) {
+        if(cantidadCuenta < cantidad) {
             System.out.println("No hay suficiente saldo");
         } else {
             cantidadCuenta -= cantidad;

@@ -27,6 +27,9 @@ Realizar un <a href="https://github.com/estelaV9/PSP/blob/master/Tema1_Concurren
 - <a href="https://github.com/estelaV9/PSP/tree/master/Tema3_ProgramacionHilosJava/EjercicioHilos/Ejer6_RetirarDinero/src/main/java/org/example">Ejercicio 6</a>: Retirar dinero de un banco.
 - <a href="https://github.com/estelaV9/PSP/tree/master/Tema3_ProgramacionHilosJava/EjercicioHilos/Ejer7_ContadorVariosHilos/src/main/java/org/example">Ejercicio 7</a>: Contador que se incrementa con varios hilos.
 
+## Repaso Evaluación
+Realizar un <a href="https://github.com/estelaV9/PSP/tree/master/Tema3_ProgramacionHilosJava/RepasoEvaluacion">repaso de la evaluación</a> en forma de un <a href="https://github.com/estelaV9/PSP/blob/master/Tema3_ProgramacionHilosJava/RepasoEvaluacion/TestRepaso.md">test</a>.
+
 
 ---
 >_IES Ribera de Castilla 24/25._

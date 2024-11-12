@@ -92,6 +92,9 @@ o	c) Un método que no permite la ejecución concurrente. <br>
 o	d) Ninguna de las anteriores. <br>
 
 **14.	Describe la acción que se muestra en esta imagen.**
+
+<img src="imagenTestRepaso.png" width="400"></img>
+
 La imagen muestra la acción del `ciclo de cambio de contexto` (**tiempo de conmutación**) entre dos procesos, P0 y P1, 
 gestionados por el sistema operativo. <br>
 

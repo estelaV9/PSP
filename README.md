@@ -30,6 +30,8 @@ Realizar un <a href="https://github.com/estelaV9/PSP/blob/master/Tema1_Concurren
 ## Repaso Evaluación
 Realizar un <a href="https://github.com/estelaV9/PSP/tree/master/Tema3_ProgramacionHilosJava/RepasoEvaluacion">repaso de la evaluación</a> en forma de un <a href="https://github.com/estelaV9/PSP/blob/master/Tema3_ProgramacionHilosJava/RepasoEvaluacion/TestRepaso.md">test</a>.
 
+## Tema 4: Mecanismos de alto nivel de concurrencia
+### <a href="https://github.com/estelaV9/PSP/blob/master/Tema4_MecanismosAltoNivelDeConcurrencia/ResumenTema4.md">Explicación</a> del tema4.
 
 ---
 >_IES Ribera de Castilla 24/25._

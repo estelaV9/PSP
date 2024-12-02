@@ -32,6 +32,12 @@ Realizar un <a href="https://github.com/estelaV9/PSP/tree/master/Tema3_Programac
 
 ## Tema 4: Mecanismos de alto nivel de concurrencia
 ### <a href="https://github.com/estelaV9/PSP/blob/master/Tema4_MecanismosAltoNivelDeConcurrencia/ResumenTema4.md">Explicación</a> del tema4.
+### <a href="https://github.com/estelaV9/PSP/blob/master/Tema4_MecanismosAltoNivelDeConcurrencia/Tarea_ProgramacionMultihilo/Enunciado_TareaProgMultihilo.md">Tarea</a> programación multihilo en Java:
+- <a href="https://github.com/estelaV9/PSP/tree/master/Tema4_MecanismosAltoNivelDeConcurrencia/Tarea_ProgramacionMultihilo/Ejer1_SincronizacionHilos">Ejercicio 1</a>: Sincronización de hilos.
+- <a href="https://github.com/estelaV9/PSP/tree/master/Tema4_MecanismosAltoNivelDeConcurrencia/Tarea_ProgramacionMultihilo/Ejer2_PrioridadesHilos">Ejercicio 2</a>: Prioridades de los hilos.
+- <a href="https://github.com/estelaV9/PSP/tree/master/Tema4_MecanismosAltoNivelDeConcurrencia/Tarea_ProgramacionMultihilo/Ejer3_ProgramacionAppMultihilo">Ejercicio 3</a>: Programación de aplicaciones multihilo.
+
+
 
 ---
->_IES Ribera de Castilla 24/25._
+>_Estela de Vega | IES Ribera de Castilla 24/25._

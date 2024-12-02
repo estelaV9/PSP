@@ -1,4 +1,4 @@
-import java.lang.management.ManagementFactory;
+package org.example;
 
 public class SincronizacionHilos {
     public static int contador = 0;

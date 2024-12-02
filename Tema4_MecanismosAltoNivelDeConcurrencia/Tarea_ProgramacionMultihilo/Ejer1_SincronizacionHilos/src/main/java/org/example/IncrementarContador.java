@@ -1,7 +1,11 @@
+package org.example;
+
 import java.lang.management.ManagementFactory;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class IncrementarContador implements Runnable {
+
+    public IncrementarContador() {
+    }
 
     @Override
     public void run() {

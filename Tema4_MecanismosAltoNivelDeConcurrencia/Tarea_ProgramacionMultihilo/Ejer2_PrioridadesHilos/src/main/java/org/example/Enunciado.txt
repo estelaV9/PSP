@@ -1,0 +1,41 @@
+Ejercicio 2: Prioridades de los hilos
+•	Objetivo: Observar cómo se ejecutan los hilos con diferentes prioridades.
+•	Instrucciones: Crea un programa que asigne diferentes prioridades a los hilos.
+•	Código de ejemplo:
+   public class PrioridadesHilos {
+       public static void main(String[] args) {
+           Thread hiloPrioritario = new Thread(() -> {
+               for (int i = 0; i < 5; i++) {
+                   System.out.println("Tarea prioritaria ejecutándose");
+                   try {
+                       Thread.sleep(500);
+                   } catch (InterruptedException e) {
+                       Thread.currentThread().interrupt();
+                   }
+               }
+           });
+
+           Thread hiloNoPrioritario = new Thread(() -> {
+               for (int i = 0; i < 5; i++) {
+                   System.out.println("Tarea no prioritaria ejecutándose");
+                   try {
+                       Thread.sleep(1000);
+                   } catch (InterruptedException e) {
+                       Thread.currentThread().interrupt();
+                   }
+               }
+           });
+
+           hiloPrioritario.setPriority(Thread.MAX_PRIORITY);
+           hiloNoPrioritario.setPriority(Thread.MIN_PRIORITY);
+
+           hiloPrioritario.start();
+           hiloNoPrioritario.start();
+       }
+   }
+
+Mejora:
+•	Objetivo: Optimizar y mejorar los programas.
+•	Instrucciones: Implementa una mejora en cada ejercicio, com	o el uso de barreras para
+    la sincronización, ajustar las prioridades de los hilos según el sistema operativo, o utilizar
+    colas de tareas para distribuir el trabajo.

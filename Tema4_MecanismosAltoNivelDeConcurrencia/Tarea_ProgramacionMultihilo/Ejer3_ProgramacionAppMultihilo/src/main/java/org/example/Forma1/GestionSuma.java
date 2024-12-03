@@ -19,14 +19,6 @@ public class GestionSuma implements Runnable {
                 isHalfSumFinish = true; // SE INDICA QUE SE HA TERMINADO LA SUMA DE LA PRIMERA MITA
                 lock.notify(); // NOTIFICA AL SEGUNDO HILO
             } else {
-                try {
-                    // EL SEGUNDO HILO ESPERA SU TURNO
-                    lock.wait();
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    System.out.println("Error, el hilo ha sido interrumpido : " + e);
-                }
-                // SE SUMA LA OTRA MITAD
                 sumaParcial(listOfNumbers, listOfNumbers.length / 2, listOfNumbers.length);
             }
         }

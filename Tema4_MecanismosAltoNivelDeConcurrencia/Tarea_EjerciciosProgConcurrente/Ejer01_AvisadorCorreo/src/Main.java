@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.*;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner reader = new Scanner(System.in);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // FICHERO DEL CORREO
+        String rutaCorreo = "resources/correo.txt";
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
-    }
+        // BUFFEREDREADER PARA LEER EL ARCHIVO "correo.txt"
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/" + rutaCorreo))){
+            String linea = bufferedReader.readLine(); // LEEMOS EL ARCHIVO LINEA POR LINEA
+
+            if (linea != null) {
+                // SI EL ARCHIVO CORREO NO ESTA VACIO SE MUESTRA UN ICONO DE CORREO
+                System.out.printf("\uD83D\uDCE9");
+            } else {
+                // SI EL ARCHIVO CORREO ESTA VACIO, SE MUESTRA EL ICONO DE SIN CORREO
+                System.out.println("✉\uFE0F");
+            } // DEPENDIENDO SI TIENE CORREO O NO, MUESTRA UN ICONO U OTRO
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error archivo no encontrado: " + e);
+        } catch (IOException e) {
+            System.out.println("Error: " + e);
+        } // try-catch br
+    } // main
 }

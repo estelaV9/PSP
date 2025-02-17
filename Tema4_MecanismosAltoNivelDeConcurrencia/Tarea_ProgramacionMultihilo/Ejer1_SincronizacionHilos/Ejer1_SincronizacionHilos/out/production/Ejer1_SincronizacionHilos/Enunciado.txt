@@ -1,0 +1,33 @@
+Ejercicio 1: Sincronización de hilos
+•	Objetivo: Evitar condiciones de carrera utilizando mecanismos de sincronización.
+•	Instrucciones: Crea un programa que utilice un recurso compartido (como una variable) y sincroniza el acceso a este recurso.
+•	Código de ejemplo:
+   public class SincronizacionHilos {
+       private static int contador = 0;
+       private static final Object lock = new Object();
+
+       public static void main(String[] args) throws InterruptedException {
+           Thread[] hilos = new Thread[10];
+           for (int i = 0; i < 10; i++) {
+               hilos[i] = new Thread(() -> {
+                   for (int j = 0; j < 1000; j++) {
+                       synchronized (lock) {
+                           contador++;
+                       }
+                   }
+               });
+               hilos[i].start();
+           }
+
+           for (Thread hilo : hilos) {
+               hilo.join();
+           }
+
+           System.out.println("Valor final del contador: " + contador);
+       }
+   }
+
+
+•	Objetivo: Optimizar y mejorar los programas.
+•	Instrucciones: Implementa una mejora en cada ejercicio, como el uso de barreras para la sincronización, ajustar
+        las prioridades de los hilos según el sistema operativo, o utilizar colas de tareas para distribuir el trabajo.

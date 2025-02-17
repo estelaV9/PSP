@@ -1,0 +1,16 @@
+Ejercicio 3
+En un examen de sistemas operativos, un estudiante plantea la siguiente solución basada en dos procesos, un proceso P1 productor y un proceso P2 consumidor, en el que el contador de los semáforos s1 y s2 valen inicialmente 0.
+
+while(1) {
+    down(s1);
+    produce();
+    up(s2);
+}
+Y el proceso P2 ejecuta el siguiente código:
+
+while(1) {
+    down(s2);
+    consume();
+    up(s1);
+}
+Responda brevemente si la solución que propone es idónea justificando su respuesta.

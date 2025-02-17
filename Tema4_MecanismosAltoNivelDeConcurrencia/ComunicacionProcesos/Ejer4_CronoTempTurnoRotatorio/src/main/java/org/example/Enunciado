@@ -1,0 +1,27 @@
+Ejercicio 4
+Realice el cronograma temporal que represente la ejecución de dos procesos P1 y P2. El proceso P1 ejecuta el siguiente código:
+
+for (int i=0; i<2; i++) {  /* #1 */
+    send(msg, P2);         /* #2 */
+    recv(msg, P2);         /* #3 */
+}
+Y el proceso P2 ejecuta el siguiente código:
+
+for (int i=0; i<2; i++) {  /* #1 */
+    recv(msg, P1);         /* #2 */
+    send(msg, P1);         /* #3 */
+}
+Suponga que:
+
+El planificador emplea turno rotatorio estricto con quantum de 3 unidades de ejecución.
+Se sabe que el proceso P1 es seleccionado en primer lugar por el planificador para ejecutarse.
+La ejecución de cada línea de código representado anteriormente supone una unidad de ejecución, por tanto, todas las instrucciones toman el mismo tiempo de ejecución.
+El comportamiento de la primitiva send() es síncrono y el la primitiva recv() es bloqueante.
+Suponga que msg contiene un mensaje que se emplea como testigo y cuyo contenido no tiene relevancia.
+El cronograma deberá incluir qué instrucción se ejecuta en cada unidad de ejecución.
+
+
+
+ X = El proceso pasa a estado bloqueado.
+    / = El proceso pasa a estado preparado.
+    > = Fin de su ejecucion

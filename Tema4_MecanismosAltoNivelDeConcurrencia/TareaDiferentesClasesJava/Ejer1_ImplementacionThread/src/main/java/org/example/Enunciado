@@ -1,0 +1,31 @@
+Ejercicio 1: Implementación de Threads
+Enunciado:
+Crea un programa en Java que simule la creación y ejecución de tres tareas diferentes utilizando threads.
+Cada tarea deberá imprimir un mensaje indicando el inicio y el fin de su ejecución, junto con el nombre del thread que
+la está ejecutando. Además, cada tarea debe esperar un tiempo aleatorio entre 1 y 3 segundos antes de terminar.
+
+Código:
+import java.util.Random;
+class MiTarea implements Runnable (
+private String nombreTarea;
+public MiTarea (String nombreTarea) (
+this.nombreTarea nombreTarea;
+@Override
+public void run() [
+try {
+System.out.println(nombreTarea iniciada por: Thread.currentThread().getName());
+Random random = new Random();
+int tiempoEspera random.nextInt(3000) + 1000; // Tiempo de espera entre 1 y 3 segundos
+Thread.sleep(tiempo Espera);
+System.out.println(nombreTarea finalizada por: " + Thread.currentThread().getName());
+} catch (InterruptedException e) (
+Thread.currentThread().interrupt();
+public class Main [
+public static void main(String[] args) (
+Thread hilol = new Thread(new MiTarea("Tarea 1"), "Hilo 1");
+Thread hilo2 = new Thread(new MiTarea ("Tarea 2"), "Hilo 2");
+Thread hilo3 = new Thread(new MiTarea ("Tarea 3"), "Hilo 3");
+hilol.start();
+hilo2.start();
+hilo3.start();
+}

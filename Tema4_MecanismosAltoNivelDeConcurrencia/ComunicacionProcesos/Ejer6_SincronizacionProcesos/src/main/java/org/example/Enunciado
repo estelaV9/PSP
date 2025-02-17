@@ -1,0 +1,26 @@
+Ejercicio 6
+Dado dos procesos P1 y P2 cuyos códigos son los siguientes:
+
+Código del Proceso 1:
+
+for (int i=0; i<2; i++) {   /* #1 */
+    send(msg);              /* #2 */
+    f(msg);                 /* #3 */
+    recv(msg);              /* #4 */
+}
+Código del Proceso 2:
+
+for (int i=0; i<2; i++) {   /* #1 */
+    recv(msg);              /* #2 */
+    f(msg);                 /* #3 */
+    send(msg);              /* #4 */
+}
+
+Suponga que:
+
+El planificador emplea turno rotatorio estricto con quantum de 3 unidades de ejecución.
+Se sabe que el proceso P1 es seleccionado en primer lugar por el planificador para ejecutarse.
+La ejecución de cada línea de código representado anteriormente supone una unidad de ejecución, por tanto, todas las instrucciones toman el mismo tiempo de ejecución.
+El comportamiento de la primitiva send() es asíncrono y el de la primitiva recv() es bloqueante.
+Suponga que msg contiene un mensaje inicialmente bien formado cuyo contenido no tiene relevancia
+El cronograma deberá incluir qué instrucción se ejecuta en cada unidad de ejecución.

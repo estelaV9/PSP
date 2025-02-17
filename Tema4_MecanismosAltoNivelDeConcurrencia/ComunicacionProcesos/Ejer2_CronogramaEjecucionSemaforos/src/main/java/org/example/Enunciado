@@ -1,0 +1,23 @@
+Ejercicio 2
+Realice el cronograma temporal que represente la ejecución de dos procesos P1 y P2. El proceso P1 ejecuta el siguiente código:
+
+for (int i=0; i<2; i++) { /* #1 */
+    down(s1);             /* #2 */
+    f1();                 /* #3 */
+    up(s2);               /* #4 */
+}
+Y el proceso P2 ejecuta el siguiente código:
+
+for (int i=0; i<2; i++) { /* #1 */
+    down(s2);             /* #2 */
+    f2();                 /* #3 */
+    up(s1);               /* #4 */
+}
+Para el semáforo s1 el contador vale 1, mientras que para el semáforo s2 el contador vale 0.
+
+Suponga que:
+
+El planificador emplea turno rotatorio estricto con quantum de 3 unidades de ejecución.
+Se sabe que el proceso P1 es seleccionado en primer lugar por el planificador para ejecutarse.
+La ejecución de cada línea de código representado anteriormente supone una unidad de ejecución, por tanto, todas las instrucciones toman el mismo tiempo de ejecución.
+El cronograma deberá incluir qué instrucción se ejecuta en cada unidad de ejecución.

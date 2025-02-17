@@ -1,0 +1,49 @@
+Ejercicio 2: Uso de Semáforos
+Enunciado:
+Implementa un programa en Java donde cinco threads intentan acceder a un recurso compartido, pero solo dos de ellos
+pueden acceder al mismo tiempo. Utiliza un semáforo para controlar el acceso concurrente. Cada thread debe imprimir
+un mensaje cuando accede al recurso y otro cuando lo libera, junto con su nombre. Además, cada thread debe simular un
+trabajo dentro del recurso esperando entre 1 y 2 segundos antes de liberar el semáforo
+
+
+
+import java.util.concurrent.Semaphore;
+import java.util.Random;
+class RecursoCompartido {
+private Semaphore semaforo;
+public RecursoCompartido (int permisos) {
+this.semaforo new Semaphore (permisos);
+public void accederRecurso (String nombreThread) (
+try {
+semaforo.acquire();
+System.out.println(nombreThread + "accedió al recurso.");
+Random random = new Random();
+int tiempoEspera random.nextInt(2000) + 1000; // Tiempo de espera entre 1 y 2 segundos
+Thread.sleep(tiempo Espera);
+System.out.println(nombreThread" liberó el recurso.");
+} catch (InterruptedException e) {
+Thread.currentThread().interrupt();
+} finally {
+semaforo.release();
+class MiTarea implements Runnable {
+private RecursoCompartido recurso;
+private String nombreThread;
+public MiTarea (RecursoCompartido recurso, String nombre Thread) (
+this.recurso = recurso;
+this.nombreThread nombreThread;
+@Override
+public void run() {
+recurso.accederRecurso (nombreThread);
+public class Main {
+public static void main(String[] args) {
+RecursoCompartido recurso new RecursoCompartido (2); // Solo 2 threads pueden acceder al mismo tiempo
+Thread hiloî new Thread(new MiTarea (recurso, "Hilo 1"));
+Thread hilo2 new Thread(new MiTarea (recurso, "Hilo 2"));
+Thread hilo3 = new Thread(new MiTarea (recurso, "Hilo 3"));
+Thread hilo4 new Thread(new MiTarea (recurso, "Hilo 4"));
+Thread hilo5 new Thread(new MiTarea (recurso, "Hilo 5"));
+hilol.start();
+hilo2.start();
+hilo3.start();
+hilo4.start();
+hilos.start();

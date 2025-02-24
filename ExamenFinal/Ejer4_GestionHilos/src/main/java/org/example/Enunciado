@@ -1,0 +1,13 @@
+Ejercicio 4: Gestión de Hilos
+-	Objetivo: Poder ver el estado de distintos hilos trabajando de forma paralela entre ellos.
+-	Instrucciones: Implementar una aplicación que gestione una lista de hilos:
+o	Estructura del hilo: Un contador que se incrementa cada segundo
+o	Lista de hilos: ArrayList de tipo Thread o Runnable que se irá revisando en las distintas funciones de la aplicación
+o	Funciones:
+	Añadir un hilo a la lista
+	Iniciar un hilo
+	Comprobar su contador
+	Comprobar su estado
+	Parar un hilo
+	Terminar hilos (Terminar el proceso de la app)
+o	Todo esto se hará con un menú con las distintas opciones, y controlar las posibles excepciones.

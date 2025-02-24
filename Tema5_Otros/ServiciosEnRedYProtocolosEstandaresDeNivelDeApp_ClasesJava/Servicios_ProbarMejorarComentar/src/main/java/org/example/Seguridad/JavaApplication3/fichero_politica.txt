@@ -1,0 +1,7 @@
+/* AUTOMATICALLY GENERATED ON Fri Feb 23 12:36:42 CET 2018*/
+/* DO NOT EDIT */
+
+grant codeBase "file:/home/usuario/repos/servicios/workspace/Seguridad/JavaApplication3/build/" {
+  permission java.io.FilePermission "/home/usuario/repos/servicios/workspace/Seguridad/JavaApplication3/build/secretos.txt", "read";
+};
+

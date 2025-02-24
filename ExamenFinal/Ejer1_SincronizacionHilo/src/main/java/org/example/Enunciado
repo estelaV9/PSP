@@ -1,0 +1,3 @@
+Ejercicio 1: Sincronización de hilos
+•	Objetivo: Evitar condiciones de carrera utilizando mecanismos de sincronización.
+•	Instrucciones: Crea un programa que utilice un recurso compartido (como una variable) y sincroniza el acceso a este recurso.
